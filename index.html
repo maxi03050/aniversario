@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Velinda ❤️</title>
+
+<style>
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:'Segoe UI',sans-serif;
+  background:linear-gradient(135deg,#ff758c,#ff7eb3,#ffb6c1);
+  color:white;
+  text-align:center;
+  overflow-x:hidden;
+}
+
+section{padding:40px 20px}
+
+.card{
+  max-width:1000px;
+  margin:20px auto;
+  padding:25px;
+  border-radius:25px;
+  background:rgba(255,255,255,.18);
+  box-shadow:0 0 25px #0004;
+  backdrop-filter:blur(6px);
+}
+
+h1{font-size:2.7rem}
+h2{font-size:2rem}
+
+p{
+  font-size:1.1rem;
+  line-height:1.7;
+}
+
+button{
+  border:none;
+  padding:14px 25px;
+  border-radius:30px;
+  background:white;
+  color:#ff3f7f;
+  font-weight:bold;
+  cursor:pointer;
+  margin:8px;
+  font-size:1rem;
+  transition:.3s;
+}
+
+button:hover{transform:scale(1.05)}
+
+.music-btn{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  z-index:9999;
+  background:white;
+  color:#ff3f7f;
+  border:none;
+  padding:12px 20px;
+  border-radius:30px;
+  font-weight:bold;
+  cursor:pointer;
+  box-shadow:0 0 15px #0005;
+}
+
+.photos{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:15px;
+  margin-top:20px;
+}
+
+.photos img{
+  width:100%;
+  height:260px;
+  object-fit:cover;
+  border-radius:20px;
+  border:4px solid white;
+  box-shadow:0 0 15px #0005;
+  transition:.3s;
+}
+
+.photos img:hover{
+  transform:scale(1.06);
+}
+
+.hidden{display:none}
+
+.game-box{
+  margin-top:20px;
+  padding:25px;
+  background:rgba(255,255,255,.20);
+  border-radius:20px;
+}
+
+.memory{
+  display:grid;
+  grid-template-columns:repeat(4,80px);
+  gap:12px;
+  justify-content:center;
+  margin-top:20px;
+}
+
+.mem-card{
+  height:80px;
+  background:white;
+  color:#ff3f7f;
+  border-radius:15px;
+  font-size:2rem;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  user-select:none;
+}
+
+.heart{
+  position:fixed;
+  top:-20px;
+  animation:fall 6s linear infinite;
+  pointer-events:none;
+  z-index:999;
+}
+
+@keyframes fall{
+  to{transform:translateY(110vh);opacity:0}
+}
+
+@media(max-width:500px){
+  h1{font-size:2rem}
+  h2{font-size:1.5rem}
+  .memory{
+    grid-template-columns:repeat(4,65px);
+  }
+  .mem-card{
+    height:65px;
+    font-size:1.6rem;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<audio id="musica" loop>
+  <source src="Ed Sheeran - Perfect.mp3" type="audio/mpeg">
+</audio>
+
+<button class="music-btn" onclick="document.getElementById('musica').play()">
+  🎵 Nuestra canción
+</button>
+
+<section>
+  <div class="card">
+    <h1>💖 Feliz 1 Año y 4 Meses Mi Amor 💖</h1>
+    <h2>Samuel ❤️ Velinda</h2>
+    <p>
+      Mi amor, hoy cumplimos 1 año y 4 meses juntos. ❤️🥺
+      <br><br>
+      Desde febrero del año pasado comenzamos una historia que cambió mi vida para siempre.
+      Hemos pasado momentos hermosos, momentos difíciles, risas, lágrimas, llamadas interminables,
+      aventuras y recuerdos que jamás voy a olvidar.
+      <br><br>
+      Esta página no es solo una página web. Es una pequeña muestra de todo lo que significas para mí.
+      Cada foto, cada juego y cada mensaje está aquí porque eres la mujer que amo,
+      la mujer que siempre me apoyó cuando más lo necesité y la persona con la que sigo soñando construir mi futuro.
+      <br><br>
+      Gracias por cada abrazo, cada palabra de ánimo, cada momento compartido
+      y por todo el amor que me has dado durante este tiempo.
+      Te amo más de lo que las palabras pueden explicar. ❤️🌹🥺
+    </p>
+
+    <button onclick="document.getElementById('musica').play()">
+      🎵 Presiona aquí, amorcito ❤️
+    </button>
+  </div>
+</section>
+
+<section>
+  <div class="card">
+    <h2>Nuestras primeras fotitos 📸</h2>
+    <div class="photos">
+      <img src="1.jpeg">
+      <img src="2.jpeg">
+      <img src="3.jpeg">
+      <img src="5.jpeg">
+      <img src="4.jpeg">
+      <img src="6.jpeg">
+      <img src="7.jpeg">
+      <img src="8.jpeg">
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="card">
+    <h2>Juego 1: encuentra los corazones iguales ❤️</h2>
+    <p>Si ganas, desbloqueas un mensajito especial.</p>
+    <div class="memory" id="memory"></div>
+
+    <div id="msg1" class="game-box hidden">
+      <h2>Gracias por estar conmigo ❤️</h2>
+      <p>
+        Velinda, si hay algo que quiero que nunca olvides es que has sido una de las mejores cosas que me han pasado en la vida.
+        Gracias por estar conmigo cuando las cosas iban bien y también cuando todo parecía complicarse.
+        Gracias por escucharme, por apoyarme en mis estudios, por preocuparte por mí incluso cuando estabas molesta,
+        por cada mensaje, cada llamada y cada momento que compartimos juntos.
+        <br><br>
+        Sé que no siempre he sido el novio perfecto y sé que te he hecho pasar momentos que no merecías vivir.
+        Pero también quiero que sepas que cada día intento aprender de mis errores porque eres una persona demasiado importante para mí.
+        Eres la mujer que me hace sonreír, la que me acompaña incluso en la distancia
+        y la persona con la que sigo soñando construir un futuro. ❤️🥺
+      </p>
+
+      <div class="photos">
+        <img src="IMG_20251022_163416.jpg">
+        <img src="IMG_20251022_163433.jpg">
+        <img src="IMG_20251022_163500.jpg">
+        <img src="IMG_20251022_163554.jpg">
+        <img src="IMG_20251022_163556.jpg">
+        <img src="IMG_20251026_141903.jpg">
+        <img src="IMG_20260503_125453.jpg">
+        <img src="WhatsApp Image 2026-06-03 at 8.15.27 AM (1).jpeg">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="card">
+    <h2>Juego 2: botón de amor 💘</h2>
+    <p>Haz clic 10 veces para llenar mi corazón.</p>
+    <button onclick="sumarAmor()">Dame amor ❤️</button>
+    <h3 id="contador">0 / 10</h3>
+
+    <div id="msg2" class="game-box hidden">
+      <h2>Razones por las que te amo 💘</h2>
+      <p>
+        Mi amor, cada clic representa una razón por la que te amo.
+        Te amo por tu sonrisa, por tu forma de preocuparte por las personas que quieres,
+        por tu fuerza cuando la vida te pone pruebas difíciles y por el enorme corazón que tienes.
+        <br><br>
+        Te amo porque siempre has estado para mí incluso cuando yo no supe estar para ti como debía.
+        Te amo porque me enseñaste a amar de una forma que nunca había conocido.
+        Cuando pienso en el futuro no imagino riquezas ni cosas materiales.
+        Lo primero que imagino eres tú.
+        <br><br>
+        Imagino viajes juntos, risas, metas cumplidas, una casa donde podamos construir recuerdos
+        y una familia llena de amor. Quiero seguir creciendo contigo, aprendiendo contigo
+        y demostrando cada día cuánto significas para mí. ❤️🥺
+      </p>
+
+      <div class="photos">
+        <img src="11.jpeg">
+        <img src="12.jpeg">
+        <img src="13.jpeg">
+        <img src="14.jpeg">
+        <img src="15.jpeg">
+        <img src="16.jpeg">
+        <img src="17.jpeg">
+        <img src="18.jpeg">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="card">
+    <h2>Juego 3: ruleta de promesas 🎡</h2>
+    <button onclick="ruleta()">Girar ruleta</button>
+    <h3 id="resultado">Toca el botón, amorcito ❤️</h3>
+
+    <div id="msg3" class="game-box hidden">
+      <h2>Nuestro futuro juntos 🌹</h2>
+      <p>
+        Cuando veo nuestras fotos no solo recuerdo lo que hemos vivido,
+        también pienso en todo lo que todavía nos falta vivir juntos.
+        Quiero viajar contigo, conocer lugares nuevos, reírnos por tonterías,
+        cumplir nuestras metas y formar la familia que tantas veces soñamos.
+        <br><br>
+        Quiero que algún día miremos atrás y digamos que valió la pena luchar por nosotros.
+        Quiero presumirte como la mujer que amo, cuidarte, respetarte,
+        hacerte sentir segura y demostrarte con hechos que mi amor por ti es real.
+      </p>
+
+      <div class="photos">
+        <img src="WhatsApp Image 2026-06-03 at 8.15.27 AM (1).jpeg">
+        <img src="WhatsApp Image 2026-06-03 at 8.15.27 AM.jpeg">
+        <img src="WhatsApp Image 2026-06-03 at 8.15.28 AM (1).jpeg">
+        <img src="WhatsApp Image 2026-06-03 at 8.15.28 AM.jpeg">
+        <img src="WhatsApp Image 2026-06-03 at 8.16.39 AM.jpeg">
+        <img src="WhatsApp Image 2026-06-03 at 8.16.40 AM (1).jpeg">
+        <img src="WhatsApp Image 2026-06-03 at 8.16.40 AM (2).jpeg">
+        <img src="WhatsApp Image 2026-06-03 at 8.16.40 AM.jpeg">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="card">
+    <h2>Mensaje final 💌</h2>
+    <button onclick="mostrarFinal()">Abrir mensaje final</button>
+
+    <div id="final" class="game-box hidden">
+      <h2>Para ti, Velinda ❤️</h2>
+      <p>
+        Velinda, hoy cumplimos 1 año y 4 meses juntos.
+        Hemos vivido muchísimas cosas desde aquel día en que comenzamos nuestra historia.
+        Hemos tenido momentos hermosos, momentos difíciles, distancia, lágrimas, alegrías
+        y experiencias que nos han hecho crecer como personas.
+        <br><br>
+        A pesar de todo, hay algo que nunca ha cambiado: el amor que siento por ti.
+        Sé que me he equivocado muchas veces y sé que aún tengo muchas cosas que mejorar.
+        Pero también quiero que sepas que sigo aquí porque te amo y porque todavía creo en nosotros.
+        <br><br>
+        Quiero viajar contigo, conocer nuevos lugares tomados de la mano, cumplir nuestros sueños,
+        celebrar nuestros logros y acompañarte en cada etapa de tu vida.
+        Quiero que algún día miremos hacia atrás y recordemos todo esto como una etapa que logramos superar juntos.
+        <br><br>
+        Y sí, quiero presumirte siempre. Quiero que el mundo sepa que eres la mujer que amo,
+        la mujer que me apoyó cuando más lo necesité, la mujer que estuvo conmigo en mis mejores y peores momentos
+        y la mujer con la que sueño compartir el resto de mi vida.
+        <br><br>
+        Gracias por estos 1 año y 4 meses, amorcito.
+        Te amo más de lo que las palabras pueden explicar. ❤️🥺🌹
+      </p>
+
+      <div class="photos">
+        <img src="WhatsApp Image 2026-06-03 at 8.15.27 AM (1).jpeg">
+        <img src="WhatsApp Image 2026-06-03 at 8.15.27 AM.jpeg">
+        <img src="WhatsApp Image 2026-06-03 at 8.15.28 AM (1).jpeg">
+        <img src="WhatsApp Image 2026-06-03 at 8.15.28 AM.jpeg">
+        <img src="WhatsApp Image 2026-06-03 at 8.16.39 AM.jpeg">
+        <img src="WhatsApp Image 2026-06-03 at 8.16.40 AM (1).jpeg">
+        <img src="WhatsApp Image 2026-06-03 at 8.16.40 AM (2).jpeg">
+        <img src="WhatsApp Image 2026-06-03 at 8.16.40 AM.jpeg">
+        <img src="WhatsApp Image 2026-06-03 at 8.16.41 AM (1).jpeg">
+        <img src="WhatsApp Image 2026-06-03 at 8.16.41 AM (2).jpeg">
+        <img src="WhatsApp Image 2026-06-03 at 8.16.41 AM.jpeg">
+        <img src="WhatsApp Image 2026-06-03 at 8.16.42 AM (1).jpeg">
+        <img src="WhatsApp Image 2026-06-03 at 8.16.42 AM.jpeg">
+        <img src="WhatsApp Image 2026-06-03 at 8.16.43 AM.jpeg">
+        <img src="WhatsApp Image 2026-06-03 at 8.16.47 AM.jpeg">
+        <img src="WhatsApp Image 2026-06-03 at 8.16.47 AM (1).jpeg">
+        <img src="WhatsApp Image 2026-06-03 at 8.16.47 AM (2).jpeg">
+        <img src="WhatsApp Image 2026-06-03 at 8.16.48 AM.jpeg">
+        <img src="WhatsApp Image 2026-06-03 at 8.16.48 AM (1).jpeg">
+        <img src="WhatsApp Image 2026-06-03 at 8.16.48 AM (2).jpeg">
+        <img src="WhatsApp Image 2026-06-03 at 8.16.48 AM (3).jpeg">
+        <img src="WhatsApp Image 2026-06-03 at 8.16.48 AM (4).jpeg">
+        <img src="WhatsApp Image 2026-06-03 at 8.16.49 AM.jpeg">
+        <img src="WhatsApp Image 2026-06-03 at 8.16.49 AM (1).jpeg">
+        <img src="WhatsApp Image 2026-06-03 at 8.16.49 AM (2).jpeg">
+        <img src="WhatsApp Image 2026-06-03 at 8.16.49 AM (3).jpeg">
+        <img src="WhatsApp Image 2026-06-03 at 8.16.50 AM.jpeg">
+        <img src="WhatsApp Image 2026-06-03 at 8.16.50 AM (1).jpeg">
+        <img src="WhatsApp Image 2026-06-03 at 8.16.50 AM (2).jpeg">
+        <img src="WhatsApp Image 2026-06-03 at 8.16.50 AM (3).jpeg">
+        <img src="WhatsApp Image 2026-06-03 at 8.16.50 AM (4).jpeg">
+        <img src="WhatsApp Image 2026-06-03 at 8.16.51 AM.jpeg">
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+const emojis = ["❤️","❤️","🥺","🥺","🌹","🌹","💘","💘"];
+let mezcla = emojis.sort(() => Math.random() - 0.5);
+let primera = null;
+let bloqueo = false;
+let pares = 0;
+
+const memory = document.getElementById("memory");
+
+mezcla.forEach((emoji)=>{
+  const carta = document.createElement("div");
+  carta.className = "mem-card";
+  carta.dataset.valor = emoji;
+  carta.innerHTML = "❔";
+
+  carta.onclick = () => {
+    if(bloqueo || carta.innerHTML !== "❔") return;
+
+    carta.innerHTML = carta.dataset.valor;
+
+    if(!primera){
+      primera = carta;
+    }else{
+      if(primera.dataset.valor === carta.dataset.valor){
+        pares++;
+        primera = null;
+
+        if(pares === 4){
+          document.getElementById("msg1").classList.remove("hidden");
+        }
+      }else{
+        bloqueo = true;
+
+        setTimeout(()=>{
+          primera.innerHTML = "❔";
+          carta.innerHTML = "❔";
+          primera = null;
+          bloqueo = false;
+        },700);
+      }
+    }
+  };
+
+  memory.appendChild(carta);
+});
+
+let amor = 0;
+
+function sumarAmor(){
+  if(amor < 10){
+    amor++;
+  }
+
+  document.getElementById("contador").innerText = amor + " / 10";
+
+  if(amor >= 10){
+    document.getElementById("msg2").classList.remove("hidden");
+  }
+}
+
+function ruleta(){
+  const mensajes = [
+    "Prometo cuidarte más y hacerte sentir amada ❤️",
+    "Prometo presumirte como la mujer que amo 🥺",
+    "Prometo escucharte y no hacerte sentir sola 💕",
+    "Prometo luchar por nuestra familia y nuestros sueños 🌹",
+    "Prometo demostrarte con hechos que te amo ❤️"
+  ];
+
+  const elegido = mensajes[Math.floor(Math.random()*mensajes.length)];
+  document.getElementById("resultado").innerText = elegido;
+  document.getElementById("msg3").classList.remove("hidden");
+}
+
+function mostrarFinal(){
+  document.getElementById("final").classList.remove("hidden");
+}
+
+function crearCorazon(){
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "❤️";
+  heart.style.left = Math.random()*100 + "vw";
+  heart.style.fontSize = Math.random()*25 + 15 + "px";
+  document.body.appendChild(heart);
+
+  setTimeout(()=>{
+    heart.remove();
+  },6000);
+}
+
+setInterval(crearCorazon,400);
+</script>
+
+</body>
+</html>
